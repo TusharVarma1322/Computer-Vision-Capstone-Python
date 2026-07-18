@@ -1,7 +1,3 @@
-Perfect — use this professional README.  
-(It places the coin image at the top, like your SQL project style.)
-
-````markdown name=README.md
 # Computer Vision Capstone (Python + OpenCV)
 
 ![Coin Detection Banner](assets/capstone_coins.png)
@@ -21,8 +17,8 @@ This project performs end-to-end coin analysis from a static image:
 - Classifies each detected coin into denominations (`1p`, `2p`, `5p`, `10p`) using rule-based thresholds
 - Annotates the output image with individual values and total estimated value
 
-The implementation demonstrates core computer vision workflow design:
-**image preprocessing → object detection → feature extraction → classification → visual output**.
+The implementation demonstrates a complete computer vision workflow:  
+**image preprocessing → object detection → feature extraction → classification → visualization**.
 
 ---
 
@@ -32,13 +28,13 @@ The implementation demonstrates core computer vision workflow design:
 computer-vision-capstone-python/
 │
 ├── assets/
-│   └── capstone_coins.png          # Input image used for detection
+│   └── capstone_coins.png
 │
-├── capstone_solution.py            # Main Python solution script
-├── requirements.txt                # Python dependencies
-├── opencv_install.md               # Conda/pip setup guide
-├── .gitignore                      # Python/IDE/system ignores
-└── README.md                       # Project documentation
+├── capstone_solution.py
+├── requirements.txt
+├── opencv_install.md
+├── .gitignore
+└── README.md
 ```
 
 ---
@@ -54,34 +50,33 @@ computer-vision-capstone-python/
 ## Methodology
 
 ### 1) Image Preprocessing
-- Load image in grayscale
-- Apply Gaussian blur to reduce noise and stabilize edge detection
+- Load the image in grayscale
+- Apply Gaussian blur to reduce noise and improve circle detection stability
 
 ### 2) Coin Detection
 - Use `cv2.HoughCircles()` to detect circular objects (coins)
-- Configure `minRadius`, `maxRadius`, and detection thresholds for reliable results
+- Tune `minRadius`, `maxRadius`, and threshold parameters for better detection quality
 
 ### 3) Feature Extraction
 For each detected coin:
 - Radius is extracted from circle geometry
-- Average local pixel intensity is computed around the center region
+- Average local intensity is computed from pixel values around the center
 
 ### 4) Coin Classification
 A rule-based classifier maps (`brightness`, `radius`) to denomination:
 - `10p`, `5p`, `2p`, `1p`
 
 ### 5) Visualization & Reporting
-- Draw detected circles and centers
+- Draw coin boundaries and centers
 - Overlay denomination labels near each coin
-- Compute and print/display total estimated value
+- Compute and display total estimated value
 
 ---
 
 ## How to Run
 
 ### Option A — Conda (Recommended)
-
-Follow detailed setup in [`opencv_install.md`](opencv_install.md), then run:
+Follow setup steps in [`opencv_install.md`](opencv_install.md), then run:
 
 ```bash
 python capstone_solution.py
@@ -98,37 +93,34 @@ python capstone_solution.py
 
 ## Output
 
-The script provides:
+The script produces:
 
-- Console output:
-  - Detected circle coordinates
-  - Coin radii
+- **Terminal output**
+  - Detected circles
+  - Radius values
   - Brightness values
-  - Predicted denomination list
+  - Predicted denominations
   - Total estimated value
-- OpenCV display window:
+- **OpenCV output window**
   - Coin outlines
-  - Coin labels (`1p/2p/5p/10p`)
-  - Estimated total value text on image
+  - Coin labels (`1p`, `2p`, `5p`, `10p`)
+  - Final total value annotation
 
 ---
 
-## Professional Notes
+## Notes
 
-- The classifier is intentionally simple and interpretable (threshold-based), making it suitable for educational capstone goals.
-- Accuracy can be improved with:
-  - Better lighting normalization
-  - Dataset-driven calibration of thresholds
-  - ML-based coin classification for robust generalization
+- This project uses an interpretable threshold-based approach suitable for capstone learning outcomes.
+- For higher robustness, thresholds may need retuning under different lighting conditions and image resolutions.
 
 ---
 
 ## Future Improvements
 
-- Add support for multiple coin sets and currencies
-- Export detection reports to CSV/JSON
-- Build a small Streamlit or Flask UI for user uploads
-- Integrate unit tests and parameter tuning utilities
+- Support additional currencies and coin sets
+- Add CSV/JSON output export
+- Build a simple Streamlit or Flask interface
+- Add test coverage and configurable detection parameters
 
 ---
 
@@ -136,6 +128,3 @@ The script provides:
 
 **Tushar Varma**  
 GitHub: [@TusharVarma1322](https://github.com/TusharVarma1322)
-````
-
-If you want, I can also give you a **shorter “recruiter-friendly” README version** (1-page concise) as an alternative.
