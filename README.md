@@ -22,7 +22,7 @@ The implementation demonstrates a complete computer vision workflow:
 
 ---
 
-## Repository Structure
+## Repository Structure:
 
 ```text
 computer-vision-capstone-python/
