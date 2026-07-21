@@ -6,7 +6,7 @@ A professional **Computer Vision capstone project** built with **Python** and **
 
 ---
 
-## Project Summary
+## Project Summary:
 
 This project performs end-to-end coin analysis from a static image:
 
