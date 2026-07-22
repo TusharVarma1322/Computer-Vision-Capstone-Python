@@ -39,7 +39,7 @@ computer-vision-capstone-python/
 
 ---
 
-## Technologies Used
+## Technologies Used:
 
 - **Python 3**
 - **OpenCV**
